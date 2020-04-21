@@ -115,8 +115,7 @@ steps:
     archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
     replaceExistingArchive: false
 
-- task: PublishBuildArtifacts@1
+- task: PublishPipelineArtifact@1
   inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
-    ArtifactName: 
-    publishLocation: 'Container'
+    targetPath: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+    publishLocation: 'pipeline'
